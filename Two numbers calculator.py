@@ -20,7 +20,15 @@ while try_again == 1:
                 operation_loop = operation_loop - 1
     
     # ask two numbers / try catch
-    first_number = float(input("Enter the first number: "))
+    first_number_loop = 1
+    while first_number_loop == 1:
+        try:
+            first_number = float(input("Enter the first number: "))
+        except ValueError:
+            print("Please input an integer or a decimal only")
+        else:
+            first_number_loop = first_number_loop - 1
+
     second_number = float(input("Enter the second number: "))
 
     # result
