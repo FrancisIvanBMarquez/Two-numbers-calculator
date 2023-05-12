@@ -9,6 +9,19 @@ while try_again == 1:
     first_number = float(input("Enter the first number: "))
     second_number = float(input("Enter the second number: "))
     # result
+    result = ""
+    if operation == 1:
+        result = first_number + second_number
+    elif operation == 2:
+        result = first_number - second_number
+    elif operation == 3:
+        result = first_number * second_number
+    else:
+        result = first_number / second_number
+
+    print("Your answer is: ", result)
+
+        
     # update loop
     try_again = try_again - 1
 
