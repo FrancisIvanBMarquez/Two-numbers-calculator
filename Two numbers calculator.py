@@ -29,7 +29,18 @@ while try_again == 1:
         else:
             first_number_loop = first_number_loop - 1
 
-    second_number = float(input("Enter the second number: "))
+    second_number_loop = 1
+    while second_number_loop == 1:
+        try:
+            second_number = float(input("Enter the second number: "))
+        except ValueError:
+            print("Please input an integer or a decimal only")
+        else:
+            if operation == 4 and second_number == 0:
+                print("Cannot divide by zero, Please input another number")
+            else:
+                second_number_loop = second_number_loop - 1
+
 
     # result
     result = ""
