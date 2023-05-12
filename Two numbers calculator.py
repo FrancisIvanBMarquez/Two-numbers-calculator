@@ -57,7 +57,21 @@ while try_again == 1:
 
         
     # update loop / try catch
-    try_again_question = int(input("Do you want to try again? 1 for yes, 0 for no: "))
+    try_again_question_loop = 1
+    while try_again_question_loop == 1:
+        try:
+            try_again_question = int(input("Do you want to try again? 1 for yes, 0 for no: "))
+        except ValueError:
+            print("Please input an integer")
+        except TypeError:
+            print("Please enter 0 and 1 only")
+            
+        else:
+            if try_again_question < 0 or try_again_question > 1:
+                print("You have input a number less than 0 or more than 1, Please input 0 and 1 only")
+            else:
+                try_again_question_loop = try_again_question_loop - 1
+    
     if try_again_question == 1:
         pass
     else:
