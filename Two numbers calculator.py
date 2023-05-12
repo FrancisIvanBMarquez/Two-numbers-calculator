@@ -4,8 +4,21 @@
 try_again = 1
 while try_again == 1:
     # choose operation / try catch
-    operation = int(input("Enter 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division: "))
-
+    operation_loop = 1
+    while operation_loop == 1:
+        try:
+            operation = int(input("Enter 1 for addition, 2 for subtraction, 3 for multiplication, 4 for division: "))
+        except ValueError:
+            print("Please input an integer")
+        except TypeError:
+            print("Please enter 1,2,3 and 4 only")
+            
+        else:
+            if operation < 1 or operation > 4:
+                print("You have input a number less than 1 or more than 4, Please input 1, 2, 3 and 4 only")
+            else:
+                operation_loop = operation_loop - 1
+    
     # ask two numbers / try catch
     first_number = float(input("Enter the first number: "))
     second_number = float(input("Enter the second number: "))
